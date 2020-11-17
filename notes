@@ -1,0 +1,17 @@
+ generate configured api with postgresql
+
+ rails new api --api --database=postgresql
+generate ur tables models routes 
+example
+  rails generate scaffold User name:text email:text
+
+  push to github by creating new repository
+
+  login to heroku
+and build 
+    heroku login
+      heroku create
+      git push heroku main
+      heroku run rake db:migrate
+
+visit the app
