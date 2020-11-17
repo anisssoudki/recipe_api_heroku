@@ -26,10 +26,11 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1
   def update
-    if @recipe.update(recipe_params)
+    if @recipe.valid?
+    @recipe.update(recipe_params)
       render json: @recipe
     else
-      render json: @recipe.errors, status: :unprocessable_entity
+      render json:  { errors: @recipe.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
